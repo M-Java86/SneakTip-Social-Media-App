@@ -34,3 +34,60 @@ h2 {
 p {
   font-size: 30px;
 }
+/* All images must not be larger than parent container */
+img {
+  width: 100%;
+}
+
+/* No styling will be added on list items */
+li {
+  list-style-type: none;
+}
+
+p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+/* defining the styling for my container class 
+Centers it, sets a maximum width and makes sure elements can flow past it */
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  overflow: visible;
+}
+/* Setting background color, height and padding to navbar*/
+.navbar {
+  background-color: rgba(108, 53, 21, 1);
+  height: 70px;
+  padding: 0 30px;
+}
+/* here I'm setting font size, reduces font-weight, adds margin and line height */
+.navbar h1 {
+  font-size: 30px;
+  font-weight: 300;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+/* displaying both child elements inside the container
+<h1> & <nav> side-by-side using Flexbox. */
+.navbar .flex {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center;
+  height: 100%;
+} /* inserted to keep nav links stacked on top of each other */
+.navbar ul {
+  /*unordered list */
+  display: flex;
+}
+/* Changes the color of both links to white, adds padding between them and margin as well */
+.navbar a {
+  color: white;
+  padding: 9px;
+  margin: 0 10px;
+}
+/*selector used to select elements when mouse over them. */
+.navbar a:hover {
+  color: #6c3515;
+  border-bottom: 3px solid #6c3515;
+}
