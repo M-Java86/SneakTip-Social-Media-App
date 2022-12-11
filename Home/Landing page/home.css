@@ -1,17 +1,20 @@
 /* Universal Selector */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Poppins:wght@300&display=swap');
+
+/* Base Styles */
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-/* Text is to be white throughout */
 
 body {
   font-family: 'lato', sans-serif;
   color: white;
 }
-/* All Link text black-SETTINGS/FOLLOWERS */
+
 a {
   color: black;
   text-decoration: none;
@@ -34,12 +37,11 @@ h2 {
 p {
   font-size: 30px;
 }
-/* All images must not be larger than parent container */
+
 img {
-  width: 200%;
+  width: 100%;
 }
 
-/* No styling will be added on list items */
 li {
   list-style-type: none;
 }
@@ -48,62 +50,300 @@ p {
   font-size: 20px;
   margin: 10px 0;
 }
-/* defining the styling for my container class 
-Centers it, sets a maximum width and makes sure elements can flow past it */
+
+footer {
+  background-color: #6c3515;
+  padding: 20px 10px;
+}
+
+footer a {
+  color: white;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  color: #6c3515;
+  border-bottom: 2px solid #6c3515;
+}
+
+/* Classes */
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
   overflow: visible;
 }
-/* Setting background color, height and padding to navbar*/
+
 .navbar {
-  background-color: rgba(108, 53, 21, 1);
+  background-color: #6c3515;
   height: 70px;
   padding: 0 30px;
 }
-/* here I'm setting font size, reduces font-weight, adds margin and line height */
+
 .navbar h1 {
   font-size: 30px;
   font-weight: 300;
   margin: 10px 0;
   line-height: 1.2;
 }
-/* displaying both child elements inside the container
-<h1> & <nav> side-by-side using Flexbox. */
+
 .navbar .flex {
   display: flex;
-  justify-content: space-between; /* Distribute items evenly */
+  justify-content: space-between;
   align-items: center;
   height: 100%;
-} /* inserted to keep nav links stacked on top of each other */
+}
+
 .navbar ul {
-  /*unordered list */
   display: flex;
 }
-/* Changes the color of both links to white, adds padding between them and margin as well */
+
 .navbar a {
   color: white;
   padding: 9px;
   margin: 0 10px;
 }
-/*selector used to select elements when mouse over them. */
+
 .navbar a:hover {
   color: #6c3515;
   border-bottom: 3px solid #6c3515;
 }
+
 .showcase {
   height: 300px;
   background-color: #6c3515;
 }
-/*margin below the text */
+
 .showcase p {
   margin-bottom: 30px;
 }
-/*shadow below the image */
+
 .showcase img {
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
 }
-/* some padding on the  form content */
+
 .showcase-form {
   padding-left: 7px;
+}
+
+.grid-item-1,
+.grid-item-2 {
+  position: relative;
+  top: 50px;
+}
+
+.grid {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.showcase input[type='email'] {
+  padding: 10px 70px 10px 0;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  padding-left: 6px;
+}
+
+.btn {
+  border-radius: 6px;
+  padding: 12px 20px;
+  background: #6c3515;
+  border: none;
+  margin-left: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.showcase-form {
+  margin: auto;
+}
+
+.little-info {
+  font-size: 15px;
+  font-family: 'poppins', sans-serif;
+}
+
+.lower-container {
+  margin: 120px auto;
+  padding: 0;
+  max-width: 1400px;
+  text-align: center;
+}
+
+.title {
+  color: black;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.text {
+  color: black;
+  font-size: 19px;
+  width: 100%;
+  padding: 10px;
+  margin: 0, 20px;
+  text-align: justify;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stats {
+  padding: 45px 50px;
+  text-align: center;
+}
+
+.stat {
+  margin: 0 30px;
+  text-align: center;
+  width: 800px;
+}
+
+.stats .fa {
+  color: purple;
+}
+
+.testimonials {
+  color: rgba(255, 229, 92, 0.59);
+  padding: 40px;
+}
+
+.testimonials img {
+  height: 100%;
+  clip-path: circle();
+}
+
+.testimonials h3 {
+  text-align: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.card {
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: -7px -7px 20px rgba(0, 0, 0, 0.2), 7px 7px 20px rgba(0, 0, 0, 0.2);
+}
+
+.circle {
+  background-color: transparent;
+  border: 3px solid purple;
+  height: 90px;
+  position: relative;
+  top: -30px;
+  left: 120px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 90px;
+}
+
+/* Tablets and Under */
+@media (max-width: 768px) {
+  .grid,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .stats .flex {
+    flex-direction: column;
+  }
+
+  .stats {
+    text-align: center;
+  }
+
+  .image {
+    width: 600px;
+    margin-left: 80px;
+  }
+
+  .stat {
+    width: 100%;
+    padding-right: 80px;
+  }
+
+  .circle {
+    background-color: transparent;
+    border: 3px solid purple;
+    height: 90px;
+    position: relative;
+    top: -30px;
+    left: 270px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 90px;
+  }
+
+  .showcase {
+    height: auto;
+    text-align: center;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 500px) {
+  .navbar {
+    height: 100px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+  }
+
+  .navbar a:hover {
+    color: white;
+    border-bottom: 2px solid black;
+  }
+
+  .navbar ul {
+    background: #6c3515;
+    border-radius: 5px;
+    padding: 10px 0;
+  }
+
+  .showcase {
+    height: auto;
+    text-align: center;
+  }
+
+  .little-info {
+    font-size: 13px;
+  }
+
+  .image {
+    width: 350px;
+    margin-left: 70px;
+  }
+
+  .stat {
+    margin-bottom: 40px;
+  }
+
+  .circle {
+    background-color: transparent;
+    border: 3px solid purple;
+    height: 90px;
+    position: relative;
+    top: -30px;
+    left: 150px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 90px;
+  }
 }
