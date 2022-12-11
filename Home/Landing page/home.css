@@ -36,7 +36,7 @@ p {
 }
 /* All images must not be larger than parent container */
 img {
-  width: 100%;
+  width: 200%;
 }
 
 /* No styling will be added on list items */
@@ -90,4 +90,20 @@ Centers it, sets a maximum width and makes sure elements can flow past it */
 .navbar a:hover {
   color: #6c3515;
   border-bottom: 3px solid #6c3515;
+}
+.showcase {
+  height: 300px;
+  background-color: #6c3515;
+}
+/*margin below the text */
+.showcase p {
+  margin-bottom: 30px;
+}
+/*shadow below the image */
+.showcase img {
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
+}
+/* some padding on the  form content */
+.showcase-form {
+  padding-left: 7px;
 }
