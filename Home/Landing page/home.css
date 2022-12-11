@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Poppins:wght@300&display=swap');
 
-/* Base Styles */
-
+/* Universal Selector */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -12,11 +11,11 @@
 
 body {
   font-family: 'lato', sans-serif;
-  color: white;
+  color: black;
 }
 
 a {
-  color: black;
+  color: rgba(255, 229, 92, 0.59);
   text-decoration: none;
 }
 
@@ -37,11 +36,11 @@ h2 {
 p {
   font-size: 30px;
 }
-
+/* All images used must not be larger than parent container */
 img {
-  width: 100%;
+  width: 105%;
 }
-
+/* styling not added on list items */
 li {
   list-style-type: none;
 }
@@ -60,27 +59,27 @@ footer a {
   color: white;
   margin: 0 10px;
 }
-
 footer a:hover {
-  color: #6c3515;
-  border-bottom: 2px solid #6c3515;
+  color: #884017;
+  border-bottom: 2px solid #884017;
 }
 
-/* Classes */
+/* This container, center it, sets a maximum width and makes sure elements can flow past it */
 
 .container {
   margin: 0 auto;
   max-width: 1200px;
   overflow: visible;
 }
-
+/* Set the background color, height and padding */
 .navbar {
-  background-color: #6c3515;
+  background-color: #884017;
   height: 70px;
   padding: 0 30px;
 }
-
+/* I set the font size, reduced font-weight, added margin and line height */
 .navbar h1 {
+  color: rgba(255, 229, 92, 0.59);
   font-size: 30px;
   font-weight: 300;
   margin: 10px 0;
@@ -97,9 +96,9 @@ footer a:hover {
 .navbar ul {
   display: flex;
 }
-
+/* I changed color to rgba 255, 229, 92, 0.59 to both links, added padding between them and margin as well */
 .navbar a {
-  color: white;
+  color: rgba(255, 229, 92, 0.59);
   padding: 9px;
   margin: 0 10px;
 }
@@ -111,17 +110,17 @@ footer a:hover {
 
 .showcase {
   height: 300px;
-  background-color: #6c3515;
+  background-color: #884017;
 }
-
+/* added a margin below the text */
 .showcase p {
   margin-bottom: 30px;
 }
-
+/* added a shadow below the image with color */
 .showcase img {
-  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 7px 7px 7px rgba(255, 229, 92, 0.59);
 }
-
+/* added some padding on the form content */
 .showcase-form {
   padding-left: 7px;
 }
@@ -157,23 +156,26 @@ footer a:hover {
   cursor: pointer;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
-
+.showcase-text {
+  color: rgba(255, 229, 92, 0.59);
+}
 .showcase-form {
   margin: auto;
 }
 
 .little-info {
-  font-size: 15px;
+  font-size: 45px;
   font-family: 'poppins', sans-serif;
+  color: rgba(255, 229, 92, 0.59);
 }
-
+/*Centers the container and sets a maximum width */
 .lower-container {
   margin: 120px auto;
   padding: 0;
   max-width: 1400px;
   text-align: center;
 }
-
+/* Targets all h3 with class of title */
 .title {
   color: black;
   font-size: 20px;
@@ -181,7 +183,7 @@ footer a:hover {
   padding-left: 10px;
   padding-top: 10px;
 }
-
+/* Targets the paragraphs with class name of text */
 .text {
   color: black;
   font-size: 19px;
@@ -190,17 +192,17 @@ footer a:hover {
   margin: 0, 20px;
   text-align: justify;
 }
-
+/* added flexbox to display horziontally, put a little space around them */
 .flex {
   display: flex;
   justify-content: space-around;
 }
-
+/* added some padding around the container and aligned text centrally */
 .stats {
   padding: 45px 50px;
   text-align: center;
 }
-
+/* Set margin and width */
 .stat {
   margin: 0 30px;
   text-align: center;
@@ -208,16 +210,17 @@ footer a:hover {
 }
 
 .stats .fa {
-  color: purple;
+  color: black;
 }
 
 .testimonials {
-  color: rgba(255, 229, 92, 0.59);
+  color: black;
   padding: 40px;
 }
-
+/* added clip-path Css property, allows you to specify a specific region of an element to display, with the rest being hidden or "clipped" away. 
+Inspiration -https://css-tricks.com/almanac/properties/c/clip-path/ */
 .testimonials img {
-  height: 100%;
+  height: 105%;
   clip-path: circle();
 }
 
@@ -251,63 +254,19 @@ footer a:hover {
   width: 90px;
 }
 
-/* Tablets and Under */
-@media (max-width: 768px) {
-  .grid,
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .stats .flex {
-    flex-direction: column;
-  }
-
-  .stats {
-    text-align: center;
-  }
-
-  .image {
-    width: 600px;
-    margin-left: 80px;
-  }
-
-  .stat {
-    width: 100%;
-    padding-right: 80px;
-  }
-
-  .circle {
-    background-color: transparent;
-    border: 3px solid purple;
-    height: 90px;
-    position: relative;
-    top: -30px;
-    left: 270px;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    width: 90px;
-  }
-
-  .showcase {
-    height: auto;
-    text-align: center;
-  }
-}
-
 /* Mobile devices */
 @media (max-width: 500px) {
   .navbar {
     height: 100px;
   }
-
+  /* changes the alignment. the logo title stays at the top and the nav links will be below it */
   .navbar .flex {
     flex-direction: column;
   }
 
   .navbar a:hover {
     color: white;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid white;
   }
 
   .navbar ul {
@@ -315,16 +274,16 @@ footer a:hover {
     border-radius: 5px;
     padding: 10px 0;
   }
-
+  /* Align text to center */
   .showcase {
     height: auto;
     text-align: center;
   }
-
+  /* Reduces font size */
   .little-info {
     font-size: 13px;
   }
-
+  /* Reduces image width */
   .image {
     width: 350px;
     margin-left: 70px;
