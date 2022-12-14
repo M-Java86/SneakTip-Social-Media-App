@@ -1,0 +1,38 @@
+Requirements:
+[Y] Use Flexbox or Grid system layout for the basic structure of your elements
+[R] Be able to navigate to the different pages. For example, clicking on "Login" should bring me to the login page, filling out the information and clicking "login" should then lead me to the dashboard page. Then, clicking "logout" should bring me back to the home page.
+[Y] You will have 4 pages that are responsive to screen sizes. Each page will include both mobile and desktop views.
+[G] Separate your CSS files by pages. Do NOT have one giant CSS file
+
+_ Hardcode any text and don't worry about getting information from somewhere else (...for now)
+_ You CAN use reusable components from Bootstrap
+_ If you want to make something different from your mockup, that's fine, just don't change too much without keeping track of your changes and modifying the mockup if need be.
+
+General
+_ Something is weird with your repo. I could not successfully clone your repo
+_ folder and file names should not contain spaces
+_ folder structure is clean and organized 
+
+Dashboard/index.html
+_ Barren, no content
+_ unresponsive
+_ no flex/grid layout
+
+Home\Landing page/index.html
+_ unresponsive
+_ both flex/grid layouts
+_ desktop -> looks good
+_ No true mobile view
+  -> Can see media query afffect top grid layout
+  -> bottom grid layout unresponsive
+    -> Bootstrap integration? 
+  -> fix flex layout by adding following property:
+      .flex { flex-wrap: wrap; }
+
+Login page/index.html
+_ responsive
+_ no flex/grid layout -> fine
+
+Sign Up Page/index.html
+_ responsive
+_ no flex/grid layouts -> fine
