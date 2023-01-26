@@ -1,3 +1,16 @@
 {
-  "uuid0" :
+  "users": {
+    "user1": {
+      "email": "owens1986@gmail.com",
+      "password": "password"
+    },
+    "user2": {
+      "email": "anyafwhite@yahoo.com",
+      "password": "password"
+    },
+    "user3": {
+      "email": "dnewsome07@gmail.com",
+      "password": "password"
+    }
+  }
 }
