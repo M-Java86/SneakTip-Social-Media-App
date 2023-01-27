@@ -1,24 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./dashboard.css" />
-    <link href='https://css.gg/shopping-cart.css' rel='stylesheet'>
-    <title>Dashboard</title>
-  </head>
-  <body>
-    <div id="Sn3akTip App">
-      <div class="side-bar">
-    <a href="#" class="w3-bar-item w3-button">Log out</a>
-      </div>
-      <div class="main">
-        <div class="nav-bar">
-          <h1>Sn3akTip</h1>
-        </div>
-        </div>
-      </div>
+<div class="dashboard">
+  <div class="header">
+    <h1>Sn3akTip Dashboard</h1>
+  </div>
+  <div class="content">
+    <div class="Sn3akTip-form">
+      <form>
+        <label for="post-input">New post:</label>
+        <input type="text" id="post-input" placeholder="Enter post here" />
+        <button type="submit">Add Task</button>
+      </form>
     </div>
-  </body>
-</html>
+    <div class="post-list-container">
+      <ul id="post-list">
+        <li class="post">
+          <input type="checkbox" />
+          <span class="post-name">Post 1</span>
+          <button class="remove-post">X</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
