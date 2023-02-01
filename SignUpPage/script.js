@@ -1,45 +1,88 @@
-const form = document.getElementById('form');
-form.addEventListener('submit', (event) => {
-  event.preventDefault(); // prevent the form from submitting to action_page.php
+let firebaseConfig = {
+  apiKey: 'AIzaSyB6PhXCLJyhcrQpCE1j2LeiDNktRMqWBdg',
+  authDomain: 'Famous-phalanx-338605.firebaseapp.com',
+  databaseURL: 'https://famous-phalanx-338605.firebaseio.com',
+  projectId: 'famous-phalanx-338605',
+  storageBucket: 'famous-phalanx-338605.appspot.com',
+  messagingSenderId: '116030627977',
+  appId: '1:116030627977:web:9a8d296b80b9cec1e26658',
+};
 
-  // Get form inputs
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  const remember = document.getElementById('remember').checked;
-  const profile_photo = document.getElementById('profile_photo').files[0];
+let form = document.getElementById('signup-form');
+let nameInput = document.getElementById('name');
+let emailInput = document.getElementById('email');
+let passwordInput = document.getElementById('password');
+let confirmPasswordInput = document.getElementById('confirm-password');
 
-  //Validate form inputs
-  if (!email || !password) {
-    const errorMessage = document.getElementById('error-message');
-    errorMessage.innerHTML = 'Please enter a valid email and password';
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  let name = nameInput.value;
+  let email = emailInput.value;
+  let password = passwordInput.value;
+  let confirmPassword = confirmPasswordInput.value;
+
+  if (!name) {
+    alert('Please enter your name');
+    return;
+  }
+  if (!email) {
+    alert('Please enter your email');
+    return;
+  }
+  if (!password) {
+    alert('Please enter a password');
+    return;
+  }
+  if (password !== confirmPassword) {
+    alert('Passwords do not match');
     return;
   }
 
-  //Upload profile photo if provided
-  if (profile_photo) {
-    //upload profile photo logic
-  }
-
-  //Submit form and redirect to login page
-  submitForm(email, password, remember); //submit form to server
-});
-
-function submitForm(email, password, remember) {
-  fetch('/SignUpPage', {
-    method: 'POST',
-    body: JSON.stringify({ email, password, remember }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.success) {
-        window.location.href = '/Login page/Login.html';
-      } else {
-        const errorMessage = document.getElementById('error-message');
-        errorMessage.innerHTML = data.message;
+  try {
+    let response = await fetch(
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${firebaseConfig.apiKey}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          returnSecureToken: true,
+        }),
       }
-    })
-    .catch((error) => {
-      ``;
-      console.log(error);
-    });
-}
+    );
+
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+
+    let data = await response.json();
+    if (data.error) {
+      alert(data.error.message);
+      return;
+    }
+
+    let userId = data.localId;
+    await fetch(
+      `https://famous-phalanx-338605.firebaseio.com/users/${userId}.json`,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+        }),
+      }
+    );
+
+    window.location.href = 'Login page/Login.html';
+  } catch (error) {
+    console.error(error);
+    alert('An error occurred while signing up. Please try again later.');
+  }
+});

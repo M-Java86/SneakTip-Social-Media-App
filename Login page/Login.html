@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./login.css" />
     <script src="script.js" defer></script>
+
     <!---Defer Boolean attribute. prevents the DOMContentLoaded event from firing until the script has loaded and finished evaluating. -->
     <title>Login</title>
   </head>
@@ -26,8 +27,9 @@
       </div>
 
       <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required />
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required />
+        <span class="error"></span>
 
         <label for="psw"><b>Password</b></label>
         <input
