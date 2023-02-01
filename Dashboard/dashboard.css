@@ -1,0 +1,45 @@
+body {
+  background-image: url(./images/background.jpeg);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(170, 148, 35, 0.59);
+  color: #fff;
+}
+
+h1 {
+  margin: 0;
+}
+
+#new-post-form {
+  display: flex;
+}
+
+#new-post-input {
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
+  flex-grow: 1;
+}
+
+#new-post-submit {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.post-list {
+  padding: 20px;
+  background-color: #eee;
+}
+
+h2 {
+  margin: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+}

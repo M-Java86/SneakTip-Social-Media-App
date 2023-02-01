@@ -64,7 +64,7 @@ form.addEventListener('submit', async (event) => {
       alert(data.error.message);
       return;
     }
-
+    //sending a PUT request to a Firebase REST API endpoint to update the data of a user with the given userId. The data being sent in the request body includes the name and email fields, and it is stringified in JSON format.
     let userId = data.localId;
     await fetch(
       `https://famous-phalanx-338605.firebaseio.com/users/${userId}.json`,
@@ -79,10 +79,9 @@ form.addEventListener('submit', async (event) => {
         }),
       }
     );
-
-    window.location.href = 'Login page/Login.html';
   } catch (error) {
     console.error(error);
     alert('An error occurred while signing up. Please try again later.');
   }
+  window.location.href = './Login page/Login.html';
 });

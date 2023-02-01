@@ -4,46 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sn3akTip Dashboard</title>
+
+    <link rel="stylesheet" href="./dashboard.css" />
+    <script src="dashboard.js" defer></script>
   </head>
   <body>
-    <form>
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <title>Dashboard</title>
-          <link rel="stylesheet" type="text/css" href="styles.css" />
-        </head>
-        <body>
-          <header>
-            <h1>Dashboard</h1>
-          </header>
-          <nav>
-            <ul>
-              <li><a href="#overview">Overview</a></li>
-              <li><a href="#statistics">Statistics</a></li>
-              <li><a href="#settings">Settings</a></li>
-            </ul>
-          </nav>
-          <main>
-            <section id="overview">
-              <h2>Overview</h2>
-              <p>Welcome to the dashboard.</p>
-            </section>
-            <section id="statistics">
-              <h2>Statistics</h2>
-              <p>Statistics will go here.</p>
-            </section>
-            <section id="settings">
-              <h2>Settings</h2>
-              <p>Settings will go here.</p>
-            </section>
-          </main>
-          <footer>
-            <p>Copyright ©2022</p>
-          </footer>
-        </body>
-      </html>
-    </form>
+    <header>
+      <h1>Sn3akTip Dashboard</h1>
+      <form
+        id="new-post-form"
+        onsubmit="event.preventDefault(); handleTaskSubmit()"
+        autocomplete="off"
+      >
+        <input
+          type="text"
+          id="new-post-input"
+          placeholder="Write testimonials here?"
+        />
+        <input type="submit" id="new-post-submit" value="Add Post" />
+      </form>
+    </header>
+    <main>
+      <section class="post-list">
+        <h2>Post</h2>
+        <div id="testimonials"></div>
+      </section>
+    </main>
   </body>
 </html>
