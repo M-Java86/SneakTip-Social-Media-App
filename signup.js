@@ -16,7 +16,7 @@ let confirmPasswordInput = document.getElementById('confirm-password');
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
-
+  //Checking for user input
   let name = nameInput.value;
   let email = emailInput.value;
   let password = passwordInput.value;

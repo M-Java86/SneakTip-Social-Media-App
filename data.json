@@ -12,5 +12,19 @@
       "email": "dnewsome07@gmail.com",
       "password": "password"
     }
+  },
+  "posts": {
+    "post1": {
+      "userID": "user1",
+      "name": "Renee Owens"
+    },
+    "post2": {
+      "userID": "user2",
+      "name": "Anya White"
+    },
+    "post3": {
+      "userID": "user3",
+      "name": "Deborah Newsome"
+    }
   }
 }
