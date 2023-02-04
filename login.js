@@ -22,3 +22,5 @@ const validateUser = (user) =>
       res(JSON.stringify({ user, status: 200, ok: true }));
     }, 2000);
   });
+//fetch Api-provides interfaces for fetching resources.
+const getUser = (user) => fetch(`${USERS_URL}/{user.username}${EXT}`);
