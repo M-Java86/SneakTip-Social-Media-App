@@ -1,15 +1,15 @@
 {
   "users": {
     "user1": {
-      "email": "owens1986@gmail.com",
+      "username": "owens1986",
       "password": "password"
     },
     "user2": {
-      "email": "anyafwhite@yahoo.com",
+      "username": "anyafwhite07",
       "password": "password"
     },
     "user3": {
-      "email": "dnewsome07@gmail.com",
+      "username": "dnewsome07",
       "password": "password"
     }
   },
