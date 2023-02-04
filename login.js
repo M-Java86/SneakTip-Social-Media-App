@@ -4,7 +4,7 @@ const password = document.getElementById('password');
 
 //Firebase-for every api call we need to out a URL &endpoint
 const USERS_URL =
-  'https://famous-phalanx-338605-default-rtdb.firebaseio.com/users';
+  'https://famous-phalanx-338605-default-rtdb.firebaseio.com/users.json';
 const POSTS_URL =
   'https://famous-phalanx-338605-default-rtdb.firebaseio.com/posts';
 const EXT = '.json';
@@ -24,3 +24,10 @@ const validateUser = (user) =>
   });
 //fetch Api-provides interfaces for fetching resources.
 const getUser = (user) => fetch(`${USERS_URL}/{user.username}${EXT}`);
+const postUser = (user) =>
+  fetch(`${USERS_URL}${EXT}`, {
+    method: 'post',
+    headers: {
+      'content-type': 'application/json', //this application is expected to be json.
+    },
+  });
